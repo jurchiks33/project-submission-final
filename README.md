@@ -1,4 +1,4 @@
-````markdown
+
 # Trading Advisor Bot
 
 Trading Advisor Bot is a full-stack after-close trading decision-support application developed as part of the project submission.
