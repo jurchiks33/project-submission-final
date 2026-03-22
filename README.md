@@ -252,6 +252,3 @@ http://localhost:5173
 ## Rights
 
 All rights reserved. This repository is published for academic grading and review purposes only. Reuse, redistribution, or copying of the code or project materials is not permitted without permission from the author.
-
-```
-```
