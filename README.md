@@ -1,6 +1,14 @@
+````markdown
 # Trading Advisor Bot
 
-Full-stack prototype for an after-close trading decision-support dashboard. The app is built as a real React + FastAPI stack and is structured so your existing Python trading engine can be plugged into a single backend adapter layer.
+Trading Advisor Bot is a full-stack after-close trading decision-support application developed as part of the project submission.
+
+The system combines:
+- a Python-based trading pipeline used to generate signals, bands, state transitions, and backtest outputs
+- a FastAPI backend that serves the application data through API endpoints
+- a React frontend that displays the dashboard, signals, positions, backtests, and settings views
+
+The application is designed as a decision-support system. It is not a live broker execution platform.
 
 ## Folder Tree
 
@@ -90,25 +98,70 @@ frontend/
   tsconfig.json
   tsconfig.node.json
   vite.config.ts
+artifacts/
+  bands/
 README.md
-```
+SCANNING USE THIS ONE v3.ipynb
+````
+
+## Project Overview
+
+This repository contains the web application and project files used for the Trading Advisor Bot submission.
+
+The main trading logic is contained in:
+
+* `SCANNING USE THIS ONE v3.ipynb`
+
+The notebook contains the trading pipeline used in the project, including:
+
+* feature generation
+* time-based data splits
+* model training
+* calibration
+* band-based signal generation
+* entry-only gating
+* backtesting
+
+The web application is used to display the latest available outputs from the project in a more usable interface.
 
 ## What Works
 
-- FastAPI backend with real endpoints:
-  - `POST /api/pipeline/run-universe`
-  - `POST /api/pipeline/run-ticker/{ticker}`
-  - `GET /api/pipeline/status`
-  - `GET /api/dashboard`
-  - `GET /api/signals`
-  - `GET /api/signals/{ticker}`
-  - `GET /api/positions`
-  - `GET /api/backtests/summary`
-  - `GET /api/backtests/{ticker}`
-  - `GET /api/settings`
-- React dashboard connected to those endpoints with React Query.
-- File-backed fallback state under `backend/data/runtime_state.json` so the app is usable immediately.
-- Integration-ready adapter boundary in `backend/app/adapters/pipeline_adapter.py`.
+The implemented system includes:
+
+* FastAPI backend with working endpoints:
+
+  * `POST /api/pipeline/run-universe`
+  * `POST /api/pipeline/run-ticker/{ticker}`
+  * `GET /api/pipeline/status`
+  * `GET /api/dashboard`
+  * `GET /api/signals`
+  * `GET /api/signals/{ticker}`
+  * `GET /api/positions`
+  * `GET /api/backtests/summary`
+  * `GET /api/backtests/{ticker}`
+  * `GET /api/settings`
+* React frontend connected to the backend endpoints using React Query
+* dashboard view for latest pipeline summary and signal table
+* signal log view for chronological signal history
+* ticker detail view for decision explanation and gate context
+* positions view for ledger and active position tracking
+* backtests view for strategy metrics and comparison charts
+* settings view for runtime parameter display
+* saved band artifacts under `artifacts/bands/`
+* backend runtime state under `backend/data/runtime_state.json` used for serving the latest available outputs to the frontend
+
+## How the Project Is Used
+
+The project is run locally.
+
+To use the web application:
+
+1. start the backend
+2. start the frontend in a separate terminal
+3. open the local frontend URL in the browser
+4. view the latest available outputs through the dashboard and supporting pages
+
+The interface is intended to present the results of the project pipeline in a structured way, rather than requiring the user to read notebook output directly.
 
 ## Run Locally
 
@@ -116,9 +169,32 @@ README.md
 
 ```bash
 cd backend
-python3 -m venv .venv
+python -m venv .venv
+```
+
+### Activate environment
+
+#### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+#### Mac / Linux
+
+```bash
 source .venv/bin/activate
+```
+
+### Install backend dependencies
+
+```bash
 pip install -r requirements.txt
+```
+
+### Start backend
+
+```bash
 uvicorn app.main:app --reload --port 8000
 ```
 
@@ -130,48 +206,52 @@ npm install
 npm run dev
 ```
 
-Open `http://localhost:5173`.
+Then open:
 
-## Trading Engine Integration
-
-The key integration file is:
-
-- `backend/app/adapters/pipeline_adapter.py`
-
-That adapter already exposes the functions your app needs:
-
-- `run_universe_pipeline_job()`
-- `run_ticker_pipeline_job(ticker: str)`
-- `get_latest_signal_snapshot()`
-- `get_ticker_signal_detail(ticker: str)`
-- `get_positions_snapshot()`
-- `get_backtest_summary()`
-- `get_ticker_backtest(ticker: str)`
-
-### How to connect your real engine
-
-1. Make your trading engine importable as a Python module.
-2. Set `TRADING_APP_TRADING_ENGINE_MODULE` to that module path.
-3. If your function names differ, set the matching env vars in `backend/app/core/config.py` or add them to `.env`.
-
-### Example integration shape
-
-Inside `pipeline_adapter.py`, replace or extend the `TODO` section so your real engine returns dictionaries shaped like the API schemas.
-
-Conceptually:
-
-```python
-from your_engine_module import run_universe_pipeline, run_ticker_pipeline
-
-def run_universe_pipeline_job():
-    result = run_universe_pipeline()
-    return _apply_real_result_to_state(result, run_mode="universe")
+```text
+http://localhost:5173
 ```
 
-If your engine currently returns custom classes or plain prints, map them in the adapter once and keep the rest of the backend unchanged.
+## Main Files
+
+### Notebook
+
+* `SCANNING USE THIS ONE v3.ipynb`
+  Main project notebook containing the trading pipeline logic used in the project.
+
+### Backend
+
+* `backend/app/main.py`
+  FastAPI entry point.
+* `backend/app/adapters/pipeline_adapter.py`
+  Adapter layer used by the backend to access pipeline-related outputs and state.
+* `backend/app/services/`
+  Service layer for dashboard, signals, positions, settings, backtests, and explanations.
+* `backend/app/api/`
+  API route definitions.
+
+### Frontend
+
+* `frontend/src/pages/`
+  Main application pages.
+* `frontend/src/components/`
+  Reusable UI and chart components.
+* `frontend/src/hooks/`
+  Data-fetching hooks for API communication.
+* `frontend/src/api/`
+  Frontend API client layer.
 
 ## Notes
 
-- The app is a decision-support system, not an execution broker.
-- The frontend shows explanations, gate results, probability bands, positions, and backtests in one place.
-- The fallback state is only there to make the full stack runnable immediately. The architecture is not locked to fake demo routes.
+* The application is an after-close decision-support system
+* It is not a broker execution platform
+* The frontend is designed to present signals, explanations, gate results, positions, and backtest summaries in one interface
+* The backend serves the latest available application state and output data to the frontend
+* The repository is published for academic submission and review purposes
+
+## Rights
+
+All rights reserved. This repository is published for academic grading and review purposes only. Reuse, redistribution, or copying of the code or project materials is not permitted without permission from the author.
+
+```
+```
