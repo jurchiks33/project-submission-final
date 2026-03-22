@@ -1,0 +1,2866 @@
+{
+  "status": {
+    "status": "succeeded",
+    "latest_run_time": "2026-03-22T14:47:38+00:00",
+    "latest_signal_date": "2026-03-20",
+    "tickers_processed": 26,
+    "last_error": null,
+    "last_run_mode": "universe"
+  },
+  "signals": [
+    {
+      "ticker": "MSFT",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5126,
+      "entry_band": 0.625,
+      "exit_band": 0.42450000000000004,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 381.87,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (MSFT) (2026-03-20)  | prob_up=51.26%, entry\u22650.625 | close=381.87",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5126,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.03,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "NVDA",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.521,
+      "entry_band": 0.5295,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 172.7,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (NVDA) (2026-03-20)  | prob_up=52.10% | close=172.70",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.521,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.04,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "META",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5307999999999999,
+      "entry_band": 0.6625,
+      "exit_band": 0.46249999999999997,
+      "trend_gate": false,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 593.66,
+      "short_explanation": "Flat because the trend gate failed even though the raw model score was constructive.",
+      "latest_message": "Flat: Band passed but trend gate blocked (META) (2026-03-20)  | prob_up=53.08% | close=593.66",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the trend gate failed even though the raw model score was constructive.",
+        "model_probability": 0.5307999999999999,
+        "decision_type": "blocked",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.06,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "down",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "down",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": false,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Trend gate failed.",
+            "Entry is blocked until the broader trend condition improves."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "LRCX",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5171,
+      "entry_band": 0.5865,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 228.36,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (LRCX) (2026-03-20)  | prob_up=51.71% | close=228.36",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5171,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.03,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "ICE",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5293,
+      "entry_band": 0.672,
+      "exit_band": 0.47200000000000003,
+      "trend_gate": false,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 158.43,
+      "short_explanation": "Flat because the trend gate failed even though the raw model score was constructive.",
+      "latest_message": "Flat: Band passed but trend gate blocked (ICE) (2026-03-20)  | prob_up=52.93% | close=158.43",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the trend gate failed even though the raw model score was constructive.",
+        "model_probability": 0.5293,
+        "decision_type": "blocked",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.06,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "down",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "down",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": false,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Trend gate failed.",
+            "Entry is blocked until the broader trend condition improves."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "ORLY",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5353,
+      "entry_band": 0.6,
+      "exit_band": 0.45,
+      "trend_gate": false,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 87.3,
+      "short_explanation": "Flat because the trend gate failed even though the raw model score was constructive.",
+      "latest_message": "Flat: Band passed but trend gate blocked (ORLY) (2026-03-20)  | prob_up=53.53% | close=87.30",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the trend gate failed even though the raw model score was constructive.",
+        "model_probability": 0.5353,
+        "decision_type": "blocked",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.07,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "down",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "down",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": false,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Trend gate failed.",
+            "Entry is blocked until the broader trend condition improves."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "GS",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.49829999999999997,
+      "entry_band": 0.625,
+      "exit_band": 0.42450000000000004,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 813.53,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (GS) (2026-03-20)  | prob_up=49.83%, entry\u22650.625 | close=813.53",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.49829999999999997,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "down",
+            "impact": 0.0,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "BLK",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.49770000000000003,
+      "entry_band": 0.739,
+      "exit_band": 0.5385,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 957.91,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (BLK) (2026-03-20)  | prob_up=49.77%, entry\u22650.739 | close=957.91",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.49770000000000003,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "down",
+            "impact": 0.0,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "PGR",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.54,
+      "entry_band": 0.653,
+      "exit_band": 0.453,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 206.0,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (PGR) (2026-03-20)  | prob_up=54.00%, entry\u22650.653 | close=206.00",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.54,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.08,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "LLY",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.4997,
+      "entry_band": 0.653,
+      "exit_band": 0.453,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 906.7,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (LLY) (2026-03-20)  | prob_up=49.97%, entry\u22650.653 | close=906.70",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.4997,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "down",
+            "impact": 0.0,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "MRK",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5439,
+      "entry_band": 0.653,
+      "exit_band": 0.453,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 114.18,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (MRK) (2026-03-20)  | prob_up=54.39%, entry\u22650.653 | close=114.18",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5439,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.09,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "ISRG",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5091,
+      "entry_band": 0.634,
+      "exit_band": 0.434,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 477.97,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (ISRG) (2026-03-20)  | prob_up=50.91%, entry\u22650.634 | close=477.97",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5091,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.02,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "HCA",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5451,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 493.88,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (HCA) (2026-03-20)  | prob_up=54.51% | close=493.88",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5451,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.09,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "ETN",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5418,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": false,
+      "quality_gate": null,
+      "last_close": 356.8,
+      "short_explanation": "Flat because the volatility gate failed and the setup was considered too unstable.",
+      "latest_message": "Flat: Band passed but vol gate blocked (ETN) (2026-03-20)  | prob_up=54.18% | close=356.80",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the volatility gate failed and the setup was considered too unstable.",
+        "model_probability": 0.5418,
+        "decision_type": "blocked",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.08,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "down",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "down",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": false,
+          "quality_gate": null,
+          "notes": [
+            "Volatility gate failed.",
+            "Entry is blocked until volatility returns to the acceptable range."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "AAPL",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5193,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 247.99,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (AAPL) (2026-03-20)  | prob_up=51.93% | close=247.99",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5193,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.04,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "AMZN",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.4976,
+      "entry_band": 0.653,
+      "exit_band": 0.453,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 205.37,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (AMZN) (2026-03-20)  | prob_up=49.76%, entry\u22650.653 | close=205.37",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.4976,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "down",
+            "impact": 0.0,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "GOOGL",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5219,
+      "entry_band": 0.6815,
+      "exit_band": 0.4815,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 301.0,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (GOOGL) (2026-03-20)  | prob_up=52.19% | close=301.00",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5219,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.04,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "CRM",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5129,
+      "entry_band": 0.653,
+      "exit_band": 0.453,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 195.38,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (CRM) (2026-03-20)  | prob_up=51.29%, entry\u22650.653 | close=195.38",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5129,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.03,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "CME",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5435,
+      "entry_band": 0.587,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 307.32,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (CME) (2026-03-20)  | prob_up=54.35%, entry\u22650.587 | close=307.32",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5435,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.09,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "TSLA",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5085000000000001,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 367.96,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (TSLA) (2026-03-20)  | prob_up=50.85%, entry\u22650.520 | close=367.96",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5085000000000001,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.02,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "COST",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5465,
+      "entry_band": 0.539,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 972.33,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (COST) (2026-03-20)  | prob_up=54.65% | close=972.33",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5465,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.09,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "V",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5108,
+      "entry_band": 0.625,
+      "exit_band": 0.42450000000000004,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 301.62,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (V) (2026-03-20)  | prob_up=51.08%, entry\u22650.625 | close=301.62",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5108,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.02,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "MCK",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5493,
+      "entry_band": 0.701,
+      "exit_band": 0.5005,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 885.84,
+      "short_explanation": "Flat because the probability did not clear the entry band.",
+      "latest_message": "Flat: No long (below entry band) (MCK) (2026-03-20)  | prob_up=54.93%, entry\u22650.701 | close=885.84",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the probability did not clear the entry band.",
+        "model_probability": 0.5493,
+        "decision_type": "flat",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.1,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "Probability remained below the required entry band.",
+            "No new long was approved for the next open."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "CAT",
+      "signal_date": "2026-03-20",
+      "action": "Flat",
+      "current_state": "Flat",
+      "probability": 0.5466,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": false,
+      "quality_gate": null,
+      "last_close": 680.88,
+      "short_explanation": "Flat because the volatility gate failed and the setup was considered too unstable.",
+      "latest_message": "Flat: Band passed but vol gate blocked (CAT) (2026-03-20)  | prob_up=54.66% | close=680.88",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": true,
+      "explanation": {
+        "plain_summary": "Flat because the volatility gate failed and the setup was considered too unstable.",
+        "model_probability": 0.5466,
+        "decision_type": "blocked",
+        "final_action": "Flat",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.09,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "down",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "down",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": false,
+          "quality_gate": null,
+          "notes": [
+            "Volatility gate failed.",
+            "Entry is blocked until volatility returns to the acceptable range."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Flat.",
+        "Current state is interpreted as Flat."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "ROK",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5146000000000001,
+      "entry_band": 0.6910000000000001,
+      "exit_band": 0.49100000000000005,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 355.11,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (ROK) (2026-03-20)  | prob_up=51.46% | close=355.11",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5146000000000001,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.03,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    },
+    {
+      "ticker": "CVX",
+      "signal_date": "2026-03-20",
+      "action": "Hold Long Position",
+      "current_state": "Long",
+      "probability": 0.5432,
+      "entry_band": 0.539,
+      "exit_band": 0.4,
+      "trend_gate": true,
+      "vol_gate": true,
+      "quality_gate": null,
+      "last_close": 201.73,
+      "short_explanation": "Long position remains valid because the state machine did not trigger an exit.",
+      "latest_message": "Hold Long Position (CVX) (2026-03-20)  | prob_up=54.32% | close=201.73",
+      "pending_action": null,
+      "rank": null,
+      "gate_blocked": false,
+      "explanation": {
+        "plain_summary": "Long position remains valid because the state machine did not trigger an exit.",
+        "model_probability": 0.5432,
+        "decision_type": "hold",
+        "final_action": "Hold Long Position",
+        "key_drivers": [
+          {
+            "feature": "Model probability",
+            "direction": "up",
+            "impact": 0.09,
+            "category": "momentum",
+            "human_reason": "The final classifier probability was a primary input into the trading decision."
+          },
+          {
+            "feature": "Trend gate",
+            "direction": "up",
+            "impact": 0.7,
+            "category": "trend",
+            "human_reason": "The system checks whether the broader trend regime is supportive before allowing entries."
+          },
+          {
+            "feature": "Volatility gate",
+            "direction": "up",
+            "impact": 0.55,
+            "category": "volatility",
+            "human_reason": "Volatility must remain inside the configured band for a fresh entry to be considered tradable."
+          },
+          {
+            "feature": "Market regime",
+            "direction": "up",
+            "impact": 0.35,
+            "category": "market",
+            "human_reason": "The final action combines raw model output with regime-style rule filters."
+          }
+        ],
+        "gate_reasoning": {
+          "trend_gate": true,
+          "vol_gate": true,
+          "quality_gate": null,
+          "notes": [
+            "The ledger is already long.",
+            "No exit rule was triggered on the latest after-close pass."
+          ]
+        }
+      },
+      "state_transitions": [
+        "Latest after-close evaluation produced action: Hold Long Position.",
+        "Current state is interpreted as Long."
+      ],
+      "risk_notes": [
+        "Signals are decision-support outputs for the next market open, not immediate execution orders."
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "ticker": "NVDA",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 178.56,
+      "entry_display_price": 178.56,
+      "current_close": 172.7,
+      "unrealized_pnl": -3.281810035842303,
+      "unrealized_pnl_pct": -3.281810035842303,
+      "probability": 0.521,
+      "entry_band": 0.5295,
+      "exit_band": 0.4,
+      "latest_message": "Hold Long Position (NVDA) (2026-03-20)  | prob_up=52.10% | close=172.70",
+      "pending_action": null
+    },
+    {
+      "ticker": "LRCX",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 233.99,
+      "entry_display_price": 233.99,
+      "current_close": 228.36,
+      "unrealized_pnl": -2.406085730159402,
+      "unrealized_pnl_pct": -2.406085730159402,
+      "probability": 0.5171,
+      "entry_band": 0.5865,
+      "exit_band": 0.4,
+      "latest_message": "Hold Long Position (LRCX) (2026-03-20)  | prob_up=51.71% | close=228.36",
+      "pending_action": null
+    },
+    {
+      "ticker": "HCA",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 499.65,
+      "entry_display_price": 499.65,
+      "current_close": 493.88,
+      "unrealized_pnl": -1.154808365856097,
+      "unrealized_pnl_pct": -1.154808365856097,
+      "probability": 0.5451,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "latest_message": "Hold Long Position (HCA) (2026-03-20)  | prob_up=54.51% | close=493.88",
+      "pending_action": null
+    },
+    {
+      "ticker": "AAPL",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 248.96,
+      "entry_display_price": 248.96,
+      "current_close": 247.99,
+      "unrealized_pnl": -0.3896208226221054,
+      "unrealized_pnl_pct": -0.3896208226221054,
+      "probability": 0.5193,
+      "entry_band": 0.52,
+      "exit_band": 0.4,
+      "latest_message": "Hold Long Position (AAPL) (2026-03-20)  | prob_up=51.93% | close=247.99",
+      "pending_action": null
+    },
+    {
+      "ticker": "GOOGL",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 307.13,
+      "entry_display_price": 307.13,
+      "current_close": 301.0,
+      "unrealized_pnl": -1.9958975026861614,
+      "unrealized_pnl_pct": -1.9958975026861614,
+      "probability": 0.5219,
+      "entry_band": 0.6815,
+      "exit_band": 0.4815,
+      "latest_message": "Hold Long Position (GOOGL) (2026-03-20)  | prob_up=52.19% | close=301.00",
+      "pending_action": null
+    },
+    {
+      "ticker": "COST",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 974.78,
+      "entry_display_price": 974.78,
+      "current_close": 972.33,
+      "unrealized_pnl": -0.2513387636184472,
+      "unrealized_pnl_pct": -0.2513387636184472,
+      "probability": 0.5465,
+      "entry_band": 0.539,
+      "exit_band": 0.4,
+      "latest_message": "Hold Long Position (COST) (2026-03-20)  | prob_up=54.65% | close=972.33",
+      "pending_action": null
+    },
+    {
+      "ticker": "ROK",
+      "state": "Long",
+      "entry_date": "2026-03-20",
+      "entry_price": 355.11,
+      "entry_display_price": 355.11,
+      "current_close": 355.11,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "probability": 0.5146000000000001,
+      "entry_band": 0.6910000000000001,
+      "exit_band": 0.49100000000000005,
+      "latest_message": "Hold Long Position (ROK) (2026-03-20)  | prob_up=51.46% | close=355.11",
+      "pending_action": null
+    },
+    {
+      "ticker": "CVX",
+      "state": "Long",
+      "entry_date": "2026-03-19",
+      "entry_price": 201.44,
+      "entry_display_price": 201.44,
+      "current_close": 201.73,
+      "unrealized_pnl": 0.14396346306591035,
+      "unrealized_pnl_pct": 0.14396346306591035,
+      "probability": 0.5432,
+      "entry_band": 0.539,
+      "exit_band": 0.4,
+      "latest_message": "Hold Long Position (CVX) (2026-03-20)  | prob_up=54.32% | close=201.73",
+      "pending_action": null
+    }
+  ],
+  "backtests": {
+    "summary": {
+      "total_start_value": 260000.0,
+      "total_end_value": 343797.52,
+      "total_pnl": 83797.52,
+      "total_return_pct": 32.23,
+      "tickers_processed": 26,
+      "beat_baseline_count": 12
+    },
+    "details": {
+      "MSFT": {
+        "ticker": "MSFT",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 24.19,
+          "max_drawdown_pct": 20.78,
+          "volatility_pct": 13.02,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -7.31,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 124.19,
+            "baseline": 92.69
+          }
+        ]
+      },
+      "NVDA": {
+        "ticker": "NVDA",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 81.5,
+          "max_drawdown_pct": 42.69,
+          "volatility_pct": 32.25,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 517.24,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 181.5,
+            "baseline": 617.24
+          }
+        ]
+      },
+      "META": {
+        "ticker": "META",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 1.21,
+          "max_drawdown_pct": 22.06,
+          "volatility_pct": 11.83,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 144.79,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 101.21,
+            "baseline": 244.79
+          }
+        ]
+      },
+      "LRCX": {
+        "ticker": "LRCX",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 71.64,
+          "max_drawdown_pct": 21.87,
+          "volatility_pct": 18.1,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 87.77,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 171.64,
+            "baseline": 187.76999999999998
+          }
+        ]
+      },
+      "ICE": {
+        "ticker": "ICE",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 14.71,
+          "max_drawdown_pct": 20.99,
+          "volatility_pct": 13.16,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -12.97,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 114.71000000000001,
+            "baseline": 87.03
+          }
+        ]
+      },
+      "ORLY": {
+        "ticker": "ORLY",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 88.38,
+          "max_drawdown_pct": 20.13,
+          "volatility_pct": 15.89,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 16.12,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 188.38,
+            "baseline": 116.12
+          }
+        ]
+      },
+      "GS": {
+        "ticker": "GS",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 2.88,
+          "max_drawdown_pct": 32.04,
+          "volatility_pct": 16.12,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 75.43,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 102.88,
+            "baseline": 175.43
+          }
+        ]
+      },
+      "BLK": {
+        "ticker": "BLK",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 27.8,
+          "max_drawdown_pct": 13.93,
+          "volatility_pct": 8.2,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -33.12,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 127.8,
+            "baseline": 66.88
+          }
+        ]
+      },
+      "PGR": {
+        "ticker": "PGR",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 39.14,
+          "max_drawdown_pct": 19.39,
+          "volatility_pct": 17.59,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 32.16,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 139.14,
+            "baseline": 132.16
+          }
+        ]
+      },
+      "LLY": {
+        "ticker": "LLY",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 126.7,
+          "max_drawdown_pct": 31.53,
+          "volatility_pct": 18.48,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 228.81,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 226.7,
+            "baseline": 328.81
+          }
+        ]
+      },
+      "MRK": {
+        "ticker": "MRK",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 20.85,
+          "max_drawdown_pct": 17.37,
+          "volatility_pct": 10.94,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -8.55,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 120.85,
+            "baseline": 91.45
+          }
+        ]
+      },
+      "ISRG": {
+        "ticker": "ISRG",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 8.48,
+          "max_drawdown_pct": 31.29,
+          "volatility_pct": 15.8,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 34.59,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 108.48,
+            "baseline": 134.59
+          }
+        ]
+      },
+      "HCA": {
+        "ticker": "HCA",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 74.87,
+          "max_drawdown_pct": 19.54,
+          "volatility_pct": 19.21,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 13.25,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 174.87,
+            "baseline": 113.25
+          }
+        ]
+      },
+      "ETN": {
+        "ticker": "ETN",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 27.3,
+          "max_drawdown_pct": 33.65,
+          "volatility_pct": 18.56,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 19.2,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 127.3,
+            "baseline": 119.2
+          }
+        ]
+      },
+      "AAPL": {
+        "ticker": "AAPL",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 35.12,
+          "max_drawdown_pct": 22.94,
+          "volatility_pct": 17.63,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -10.1,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 135.12,
+            "baseline": 89.9
+          }
+        ]
+      },
+      "AMZN": {
+        "ticker": "AMZN",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": -6.03,
+          "max_drawdown_pct": 27.29,
+          "volatility_pct": 13.89,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -41.59,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 93.97,
+            "baseline": 58.41
+          }
+        ]
+      },
+      "GOOGL": {
+        "ticker": "GOOGL",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 6.96,
+          "max_drawdown_pct": 29.74,
+          "volatility_pct": 11.32,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 81.56,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 106.96,
+            "baseline": 181.56
+          }
+        ]
+      },
+      "CRM": {
+        "ticker": "CRM",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": -7.76,
+          "max_drawdown_pct": 25.51,
+          "volatility_pct": 13.09,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 2.89,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 92.24,
+            "baseline": 102.89
+          }
+        ]
+      },
+      "CME": {
+        "ticker": "CME",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 67.36,
+          "max_drawdown_pct": 13.83,
+          "volatility_pct": 14.11,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 29.34,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 167.36,
+            "baseline": 129.34
+          }
+        ]
+      },
+      "TSLA": {
+        "ticker": "TSLA",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": -29.6,
+          "max_drawdown_pct": 42.77,
+          "volatility_pct": 18.7,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -36.3,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 70.4,
+            "baseline": 63.7
+          }
+        ]
+      },
+      "COST": {
+        "ticker": "COST",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 26.48,
+          "max_drawdown_pct": 37.58,
+          "volatility_pct": 16.62,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 72.1,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 126.48,
+            "baseline": 172.1
+          }
+        ]
+      },
+      "V": {
+        "ticker": "V",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 2.86,
+          "max_drawdown_pct": 21.46,
+          "volatility_pct": 13.85,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -8.79,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 102.86,
+            "baseline": 91.21000000000001
+          }
+        ]
+      },
+      "MCK": {
+        "ticker": "MCK",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 98.95,
+          "max_drawdown_pct": 19.23,
+          "volatility_pct": 15.29,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 154.73,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 198.95,
+            "baseline": 254.73
+          }
+        ]
+      },
+      "CAT": {
+        "ticker": "CAT",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 7.99,
+          "max_drawdown_pct": 30.35,
+          "volatility_pct": 18.12,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": 13.81,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 107.99,
+            "baseline": 113.81
+          }
+        ]
+      },
+      "ROK": {
+        "ticker": "ROK",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": -7.2,
+          "max_drawdown_pct": 20.72,
+          "volatility_pct": 11.72,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -51.86,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 92.8,
+            "baseline": 48.14
+          }
+        ]
+      },
+      "CVX": {
+        "ticker": "CVX",
+        "period_label": "Notebook test window",
+        "metrics": {
+          "total_return_pct": 33.21,
+          "max_drawdown_pct": 30.61,
+          "volatility_pct": 16.86,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "baseline_metrics": {
+          "total_return_pct": -30.97,
+          "max_drawdown_pct": 0.0,
+          "volatility_pct": 0.0,
+          "total_trades": 0,
+          "win_rate_pct": 0.0,
+          "profit_factor": 0.0,
+          "expectancy": 0.0
+        },
+        "equity_curve": [
+          {
+            "date": "start",
+            "strategy": 100.0,
+            "baseline": 100.0
+          },
+          {
+            "date": "end",
+            "strategy": 133.21,
+            "baseline": 69.03
+          }
+        ]
+      }
+    }
+  },
+  "settings": {
+    "seq_len": 30,
+    "epochs": 120,
+    "patience": 8,
+    "split_mode": "by_date",
+    "val_years": 3,
+    "test_years": 5,
+    "target_mode": "riskadj_sign",
+    "use_band": true,
+    "thr_entry": 0.6,
+    "thr_exit": 0.45,
+    "use_trend_gate": true,
+    "use_vol_gate": true,
+    "fees": 0.001,
+    "slippage": 0.001
+  }
+}
